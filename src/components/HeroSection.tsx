@@ -3,11 +3,18 @@ import { ArrowDown } from "lucide-react";
 const HeroSection = () => {
   const scrollToNextSection = () => {
     const nextSection = document.getElementById('nosotros');
-    nextSection?.scrollIntoView({ behavior: 'smooth' });
+    if (nextSection) {
+      const rect = nextSection.getBoundingClientRect();
+      const offsetTop = window.pageYOffset + rect.top - 120; // Ajusta este valor para controlar qué tan arriba se detiene
+      window.scrollTo({
+        top: offsetTop,
+        behavior: 'smooth'
+      });
+    }
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
+    <section className="min-h-screen flex items-center justify-center relative overflow-hidden" style={{ alignItems: 'flex-start', paddingTop: '35vh' }}>
       {/* Video Background - Full Screen */}
       <div className="absolute inset-0 w-full h-full overflow-hidden">
         <iframe
@@ -38,6 +45,33 @@ const HeroSection = () => {
               <p className="subtitle text-white/90 leading-relaxed mb-12 drop-shadow-md" data-aos="fade-up">
                 Agencia de medios digitales que integra ia y datos para escalar tu performance.
               </p>
+              
+              {/* Down Arrow */}
+              <div className="flex justify-center mt-8" data-aos="fade-up" data-aos-delay="300">
+                <button 
+                  onClick={scrollToNextSection}
+                  className="p-3 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-all duration-300 group"
+                  style={{
+                    animation: 'gentle-bounce 2s ease-in-out infinite'
+                  }}
+                >
+                  <ArrowDown 
+                    size={24} 
+                    className="text-white group-hover:text-primary transition-colors duration-300" 
+                  />
+                </button>
+              </div>
+              
+              <style>{`
+                @keyframes gentle-bounce {
+                  0%, 100% {
+                    transform: translateY(0px);
+                  }
+                  50% {
+                    transform: translateY(-0.25px);
+                  }
+                }
+              `}</style>
             </div>
           </div>
         </div>

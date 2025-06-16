@@ -11,8 +11,8 @@ const ContactSection = () => {
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16 animate-fade-in-up">
-            <h2 className="text-2xl lg:text-3xl font-bold mb-6 text-primary">
-              ¿Listo para crecer?
+            <h2 className="text-2xl lg:text-3xl font-medium mb-6 text-primary">
+              ¿Listo para potenciar tu negocio?
             </h2>
           </div>
 

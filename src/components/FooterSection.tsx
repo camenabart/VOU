@@ -1,132 +1,123 @@
-import { Button } from "@/components/ui/button";
-import { Mail, Phone, MapPin, Linkedin, Twitter } from "lucide-react";
+import { Instagram, Youtube, Linkedin } from "lucide-react";
 
 const FooterSection = () => {
-  const partnerLogos = [
-    {
-      src: "/lovable-uploads/49673cb0-380a-461e-805d-1249dc445d1c.png",
-      alt: "Google Partner Premier 2025",
-      name: "Google Partner"
-    },
-    {
-      src: "/lovable-uploads/d6a61654-65d4-4cda-8a9c-94f379f120eb.png",
-      alt: "HubSpot Platinum Partner",
-      name: "HubSpot Platinum"
-    },
-    {
-      src: "/lovable-uploads/8e5265c1-c6cb-42c1-bae7-cd32364451a1.png",
-      alt: "Google Cloud Partner",
-      name: "Google Cloud"
-    },
-    {
-      src: "/lovable-uploads/0c939a7b-94d2-431b-b5d7-2a579cc0235f.png",
-      alt: "Meta Business Partner",
-      name: "Meta Business"
-    }
-  ];
-
   return (
-    <footer className="bg-background border-t border-border/50 py-20 relative overflow-hidden">
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-t from-secondary/50 to-transparent" />
-      
-      <div className="container mx-auto px-4 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-16 mb-16">
-          <div className="lg:col-span-2">
-            <div className="flex items-center mb-6">
-              <img 
-                src="/lovable-uploads/7f634f2f-6185-4afb-88d3-fed919990075.png" 
-                alt="VOU Logo" 
-                className="h-10 w-auto mr-4"
-              />
-              <div className="text-muted-foreground text-lg">
-                Performance Digital & AI
+    <>
+      {/* Main Footer */}
+      <div className="bg-background py-16">
+        <div className="container mx-auto px-4 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
+            {/* Logo Column */}
+            <div className="col-span-12 md:col-span-3 order-0 md:order-1">
+              <div className="footer-logo">
+                <img 
+                  src="/lovable-uploads/logo.png" 
+                  alt="VOU Logo"
+                  className="h-12 w-auto"
+                />
               </div>
             </div>
-            <p className="text-muted-foreground mb-8 max-w-md leading-relaxed text-lg">
-              La unidad especializada en performance digital y soluciones de medios 
-              potenciadas por datos e Inteligencia Artificial de Moov Media Group.
-            </p>
-            
-            {/* Partners logos */}
-            <div className="mb-8">
-              <h4 className="font-semibold mb-4 text-foreground">Partners Certificados</h4>
-              <div className="flex items-center gap-6">
-                {partnerLogos.map((partner, index) => (
-                  <img 
-                    key={index}
-                    src={partner.src} 
-                    alt={partner.alt}
-                    className="h-12 w-auto object-contain filter brightness-90 hover:brightness-100 transition-all duration-300 hover:scale-110"
-                  />
-                ))}
-              </div>
+
+            {/* Services Column */}
+            <div className="col-span-7 md:col-span-3 order-1 md:order-1">
+              <h4 className="text-white font-medium mb-6 text-sm">Servicios</h4>
+              <ul className="space-y-3 text-muted-foreground">
+                <li><a href="/servicios" className="hover:text-primary transition-colors text-sm">Performance Digital & IA</a></li>
+                <li><a href="/servicios" className="hover:text-primary transition-colors text-sm">IA Conversacional</a></li>
+                <li><a href="/servicios" className="hover:text-primary transition-colors text-sm">Conversion Rate Optimization</a></li>
+                <li><a href="/servicios" className="hover:text-primary transition-colors text-sm">SEO Potenciado por IA</a></li>
+                <li><a href="/servicios" className="hover:text-primary transition-colors text-sm">Medios Digitales</a></li>
+                <li><a href="/servicios" className="hover:text-primary transition-colors text-sm">Automatización de Marketing</a></li>
+              </ul>
             </div>
-            
-            {/* Social links */}
-            <div className="flex space-x-4">
-              <Button 
-                variant="outline" 
-                size="icon" 
-                className="glass-effect border-white/20 hover-lift"
+
+            {/* Agencies Column */}
+            <div className="col-span-5 md:col-span-2 order-2 md:order-2">
+              <h4 className="text-white font-medium mb-6 text-sm">Agencias y consultoras</h4>
+              <ul className="space-y-3 text-muted-foreground">
+                <li><a href="https://moovmediagroup.com/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors text-sm">Moov Media Group</a></li>
+                <li><a href="https://www.somosforma.com/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors text-sm">Forma</a></li>
+                <li><a href="https://www.moov.cl/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors text-sm">Moov</a></li>
+                <li><a href="https://www.metrix.digital/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors text-sm">Metrix</a></li>
+              </ul>
+            </div>
+
+            {/* Offices Column */}
+            <div className="col-span-12 md:col-span-3 order-3 md:order-3">
+              <h4 className="text-white font-medium mb-6 text-sm">Nuestras Oficinas</h4>
+              <div className="space-y-6">
+                <div>
+                  <h5 className="text-white font-medium mb-2 text-sm">Chile</h5>
+                  <p className="text-muted-foreground text-sm">
+                    Apoquindo 4660, piso 11, Oficina 1102, Las Condes, Santiago<br />
+                    Código postal: 7560969
+                  </p>
+                </div>
+                <div>
+                  <h5 className="text-white font-medium mb-2 text-sm">Costa Rica</h5>
+                  <p className="text-muted-foreground text-sm">
+                    WVMC+898, Trejos Montealegre, San José Province, Escazu, Costa Rica
+                  </p>
+                </div>
+              </div>
+              <a 
+                href="/contacto" 
+                className="inline-flex items-center gap-2 mt-6 text-primary hover:text-primary/80 transition-colors text-sm"
               >
-                <Linkedin className="w-5 h-5" />
-              </Button>
-              <Button 
-                variant="outline" 
-                size="icon" 
-                className="glass-effect border-white/20 hover-lift"
-              >
-                <Twitter className="w-5 h-5" />
-              </Button>
+                <span>✉</span> Hablemos
+              </a>
             </div>
-          </div>
 
-          <div>
-            <h3 className="font-semibold mb-6 text-foreground text-xl">Servicios</h3>
-            <ul className="space-y-4 text-muted-foreground">
-              <li><a href="#" className="hover:text-primary transition-colors duration-300 text-base">Automatización Inteligente</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors duration-300 text-base">Modelos Predictivos</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors duration-300 text-base">Agentes IA Verticales</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors duration-300 text-base">Data Management</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors duration-300 text-base">Attribution Modeling</a></li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="font-semibold mb-6 text-foreground text-xl">Contacto</h3>
-            <div className="space-y-4 text-muted-foreground">
-              <div className="flex items-center gap-3">
-                <Mail className="w-5 h-5 text-primary" />
-                <span className="text-base">hello@vou.agency</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <Phone className="w-5 h-5 text-primary" />
-                <span className="text-base">+1 (555) 123-4567</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <MapPin className="w-5 h-5 text-primary" />
-                <span className="text-base">New York, NY</span>
+            {/* Partner Logos */}
+            <div className="col-span-12 order-4 md:order-4 pt-8 border-t border-border/30">
+              <div className="flex flex-wrap items-center justify-center gap-8">
+                <img src="https://www.moov.cl/wp-content/uploads/sites/7/2024/11/BUK.png" alt="BUK" className="h-12 w-auto filter grayscale hover:grayscale-0 transition-all duration-300 hover:scale-110" />
+                <img src="https://www.moov.cl/wp-content/uploads/sites/7/2024/11/festival-achap-300x159.png" alt="Festival ACHAP" className="h-12 w-auto filter grayscale hover:grayscale-0 transition-all duration-300 hover:scale-110" />
+                <img src="https://www.moov.cl/wp-content/uploads/sites/7/2025/03/PremierPartner-RGB.png" alt="Premier Partner" className="h-12 w-auto filter grayscale hover:grayscale-0 transition-all duration-300 hover:scale-110" />
+                <img src="https://www.moov.cl/wp-content/uploads/sites/7/2024/11/endeavor-300x149.png" alt="Endeavor" className="h-12 w-auto filter grayscale hover:grayscale-0 transition-all duration-300 hover:scale-110" />
+                <img src="https://www.moov.cl/wp-content/uploads/sites/7/2024/11/hubspot.png" alt="HubSpot" className="h-12 w-auto filter grayscale hover:grayscale-0 transition-all duration-300 hover:scale-110" />
+                <img src="https://www.moov.cl/wp-content/uploads/sites/7/2024/11/conectif.png" alt="Conectif" className="h-12 w-auto filter grayscale hover:grayscale-0 transition-all duration-300 hover:scale-110" />
+                <img src="https://www.moov.cl/wp-content/uploads/sites/7/2024/11/shopify-partners-300x112.png" alt="Shopify Partners" className="h-12 w-auto filter grayscale hover:grayscale-0 transition-all duration-300 hover:scale-110" />
+                <img src="https://www.moov.cl/wp-content/uploads/sites/7/2024/11/AWS-partner-300x100.png" alt="AWS Partner" className="h-12 w-auto filter grayscale hover:grayscale-0 transition-all duration-300 hover:scale-110" />
               </div>
             </div>
-            <Button className="mt-8 bg-primary text-primary-foreground hover:bg-primary/90 hover-lift text-base px-6 py-3">
-              Contáctanos
-            </Button>
-          </div>
-        </div>
-
-        <div className="border-t border-border/50 pt-10 flex flex-col md:flex-row justify-between items-center">
-          <div className="text-muted-foreground mb-6 md:mb-0 text-base">
-            © 2024 VOU - Moov Media Group. Todos los derechos reservados.
-          </div>
-          <div className="flex space-x-8 text-muted-foreground">
-            <a href="#" className="hover:text-primary transition-colors duration-300 text-base">Privacidad</a>
-            <a href="#" className="hover:text-primary transition-colors duration-300 text-base">Términos</a>
-            <a href="#" className="hover:text-primary transition-colors duration-300 text-base">Cookies</a>
           </div>
         </div>
       </div>
-    </footer>
+
+      {/* Bottom Footer */}
+      <div className="bg-secondary py-6 border-t border-border/30">
+        <div className="container mx-auto px-4 lg:px-8">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+                         <div className="text-center md:text-left">
+               <p className="text-muted-foreground text-sm">Copyright © 2025 VOU. All rights reserved</p>
+               <p className="text-muted-foreground text-sm">
+                 Diseño y Desarrollo <a href="https://www.somosforma.com/" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80 transition-colors">VOU | Moov Media Group</a>.
+               </p>
+             </div>
+                         <div className="flex items-center gap-4">
+               <p className="text-muted-foreground text-sm">Síguenos</p>
+               <div className="flex gap-3">
+                 <a href="https://www.instagram.com/somosmoov/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors p-2 rounded-full hover:bg-primary/10">
+                   <Instagram size={18} />
+                 </a>
+                 <a href="https://www.youtube.com/@MoovMediaGroup" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors p-2 rounded-full hover:bg-primary/10">
+                   <Youtube size={18} />
+                 </a>
+                 <a href="https://www.linkedin.com/company/moov-digital" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors p-2 rounded-full hover:bg-primary/10">
+                   <Linkedin size={18} />
+                 </a>
+                 <a href="https://www.tiktok.com/@moovmediagroup" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors p-2 rounded-full hover:bg-primary/10">
+                   <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                     <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+                   </svg>
+                 </a>
+               </div>
+             </div>
+          </div>
+        </div>
+      </div>
+    </>
   );
 };
 

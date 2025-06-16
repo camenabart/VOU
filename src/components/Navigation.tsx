@@ -1,9 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -19,48 +21,54 @@ const Navigation = () => {
     setIsMenuOpen(false); // Close mobile menu after clicking
   };
 
+  const navigateToPage = (path: string) => {
+    navigate(path);
+    setIsMenuOpen(false); // Close mobile menu after clicking
+  };
+
   return (
-    <nav className="fixed top-0 w-full z-50 bg-background/95 backdrop-blur-sm">
+    <nav className="fixed top-8 w-full z-40 bg-background/95 backdrop-blur-sm border-b border-white/10">
       <div className="container mx-auto px-4 lg:px-32">
         <div className="flex items-center justify-between h-20">
-          {/* Left menu items */}
-          <div className="hidden lg:flex items-center space-x-16 flex-1 justify-center">
+          {/* Left logo */}
+          <div className="flex items-center flex-shrink-0">
             <button 
-              onClick={() => scrollToSection('nosotros')}
+              onClick={() => navigateToPage('/')}
+              className="cursor-pointer hover:opacity-80 transition-opacity"
+            >
+              <img 
+                src="/lovable-uploads/logo.png" 
+                alt="VOU Logo" 
+                className="h-8 w-auto"
+              />
+            </button>
+          </div>
+
+          {/* Right menu items */}
+          <div className="hidden lg:flex items-center space-x-12 ml-auto">
+            <button 
+              onClick={() => navigateToPage('/nuestro-equipo')}
               className="text-white hover:text-white/80 transition-colors cursor-pointer"
             >
               Nosotros
             </button>
             <button 
-              onClick={() => scrollToSection('resultados')}
+              onClick={() => navigateToPage('/resultados')}
               className="text-white hover:text-white/80 transition-colors cursor-pointer"
             >
-              Resultados
+              Casos de estudio
             </button>
-          </div>
-
-          {/* Center logo */}
-          <div className="flex items-center justify-center flex-shrink-0">
-            <img 
-              src="/lovable-uploads/7f634f2f-6185-4afb-88d3-fed919990075.png" 
-              alt="VOU Logo" 
-              className="h-8 w-auto"
-            />
-          </div>
-
-          {/* Right menu items */}
-          <div className="hidden lg:flex items-center space-x-16 flex-1 justify-center">
             <button 
-              onClick={() => scrollToSection('servicios')}
+              onClick={() => navigateToPage('/servicios')}
               className="text-white hover:text-white/80 transition-colors cursor-pointer"
             >
               Servicios
             </button>
             <button 
-              onClick={() => scrollToSection('contacto')}
-              className="text-white hover:text-white/80 transition-colors cursor-pointer"
+              onClick={() => navigateToPage('/contacto')}
+              className="bg-primary hover:bg-primary/90 text-black px-4 py-2 rounded-full transition-colors cursor-pointer font-medium"
             >
-              Contacto
+              Quiero asesoría
             </button>
           </div>
 
@@ -79,28 +87,28 @@ const Navigation = () => {
           <div className="lg:hidden py-4 border-t border-border">
             <div className="flex flex-col space-y-4">
               <button 
-                onClick={() => scrollToSection('nosotros')}
+                onClick={() => navigateToPage('/nuestro-equipo')}
                 className="text-white hover:text-white/80 transition-colors text-left"
               >
                 Nosotros
               </button>
               <button 
-                onClick={() => scrollToSection('resultados')}
+                onClick={() => navigateToPage('/resultados')}
                 className="text-white hover:text-white/80 transition-colors text-left"
               >
-                Resultados
+                Casos de estudio
               </button>
               <button 
-                onClick={() => scrollToSection('servicios')}
+                onClick={() => navigateToPage('/servicios')}
                 className="text-white hover:text-white/80 transition-colors text-left"
               >
                 Servicios
               </button>
               <button 
-                onClick={() => scrollToSection('contacto')}
-                className="text-white hover:text-white/80 transition-colors text-left"
+                onClick={() => navigateToPage('/contacto')}
+                className="text-white hover:text-white/80 transition-colors text-left font-medium"
               >
-                Contacto
+                Quiero asesoría
               </button>
             </div>
           </div>

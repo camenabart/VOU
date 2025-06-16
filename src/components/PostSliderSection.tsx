@@ -78,14 +78,15 @@ const PostSliderSection = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Video container - lado izquierdo */}
             <div className="order-2 lg:order-1">
-              <div className="relative aspect-[9/16] max-w-sm mx-auto rounded-2xl overflow-hidden bg-black">
-                <iframe
-                  src="https://www.youtube.com/embed/-Y9xBaVfzsk?autoplay=1&mute=1&loop=1&playlist=-Y9xBaVfzsk"
+              <div className="relative aspect-video max-w-xl mx-auto rounded-2xl overflow-hidden bg-black">
+                <video
+                  src="/lovable-uploads/vino.mp4"
                   title="Escalando con IA"
-                  className="w-full h-full"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
+                  className="w-full h-full object-cover"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
                 />
               </div>
             </div>
