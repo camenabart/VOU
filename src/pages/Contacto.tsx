@@ -4,6 +4,7 @@ import FooterSection from "@/components/FooterSection";
 import { ArrowLeft, Mail, Phone, MapPin, Clock, CheckCircle, XCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { EMAILJS_CONFIG } from "@/config/emailjs";
 
 const Contacto = () => {
   const [formData, setFormData] = useState({
@@ -24,32 +25,34 @@ const Contacto = () => {
     setSubmitStatus('idle');
 
     try {
-      // Crear el mensaje de email
-      const emailBody = `
-        Nuevo contacto desde VOU.digital
-        
-        Nombre: ${formData.name}
-        Email: ${formData.email}
-        Empresa: ${formData.company || 'No especificada'}
-        Teléfono: ${formData.phone || 'No especificado'}
-        Servicio de interés: ${formData.service || 'No especificado'}
-        
-        Mensaje:
-        ${formData.message || 'Sin mensaje adicional'}
-      `;
+      // Verificar que EmailJS esté disponible
+      if (!window.emailjs) {
+        throw new Error('EmailJS no está disponible');
+      }
 
-      // Crear el link mailto
-      const subject = encodeURIComponent(`Nuevo contacto desde VOU - ${formData.name}`);
-      const body = encodeURIComponent(emailBody);
-      const mailtoLink = `mailto:alejandro@agenciavou.cl,catalina.amenabar@agenciavou.cl,mariajose.valdes@agenciavou.cl?subject=${subject}&body=${body}`;
-      
-      // Abrir cliente de email
-      window.open(mailtoLink, '_blank');
+      // Preparar los parámetros del template
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        company: formData.company || 'No especificada',
+        phone: formData.phone || 'No especificado',
+        service: formData.service || 'No especificado',
+        message: formData.message || 'Sin mensaje adicional',
+        to_email: 'alejandro@agenciavou.cl,catalina.amenabar@agenciavou.cl,mariajose.valdes@agenciavou.cl'
+      };
+
+      // Enviar el email usando EmailJS
+      await window.emailjs.send(
+        EMAILJS_CONFIG.serviceId,
+        EMAILJS_CONFIG.templateId,
+        templateParams,
+        EMAILJS_CONFIG.publicKey
+      );
       
       // Mostrar mensaje de éxito
       setSubmitStatus('success');
       
-      // Limpiar formulario después de 2 segundos
+      // Limpiar formulario después de 3 segundos
       setTimeout(() => {
         setFormData({
           name: '',
@@ -265,15 +268,15 @@ const Contacto = () => {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-primary hover:bg-primary/90 disabled:bg-gray-600 disabled:cursor-not-allowed text-white py-4 rounded-lg font-medium transition-colors flex items-center justify-center gap-2"
+                  className="w-full bg-primary hover:bg-primary/90 disabled:bg-gray-600 disabled:cursor-not-allowed text-black py-4 rounded-lg font-medium transition-colors flex items-center justify-center gap-2"
                 >
                   {isSubmitting ? (
                     <>
-                      <div className="animate-spin h-5 w-5 border-2 border-white border-t-transparent rounded-full"></div>
+                      <div className="animate-spin h-5 w-5 border-2 border-black border-t-transparent rounded-full"></div>
                       Enviando...
                     </>
                   ) : (
-                    'Enviar mensaje'
+                    'Enviar Asesoría'
                   )}
                 </button>
 
@@ -281,14 +284,14 @@ const Contacto = () => {
                 {submitStatus === 'success' && (
                   <div className="flex items-center gap-2 p-4 bg-green-500/20 border border-green-500/30 rounded-lg text-green-400">
                     <CheckCircle size={20} />
-                    <span>¡Formulario procesado! Se abrirá tu cliente de email para enviar la consulta.</span>
+                    <span>¡Solicitud de asesoría enviada exitosamente! Nos pondremos en contacto contigo en las próximas 24 horas.</span>
                   </div>
                 )}
                 
                 {submitStatus === 'error' && (
                   <div className="flex items-center gap-2 p-4 bg-red-500/20 border border-red-500/30 rounded-lg text-red-400">
                     <XCircle size={20} />
-                    <span>Hubo un error. Por favor, intenta nuevamente o contáctanos directamente a alejandro@agenciavou.cl</span>
+                    <span>Hubo un error al enviar la solicitud. Por favor, intenta nuevamente o contáctanos directamente a alejandro@agenciavou.cl</span>
                   </div>
                 )}
               </form>

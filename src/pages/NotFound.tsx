@@ -1,4 +1,4 @@
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import { useEffect } from "react";
 import Navigation from "@/components/Navigation";
 import SuperHeader from "@/components/SuperHeader";
@@ -22,9 +22,9 @@ const NotFound = () => {
         <div className="text-center">
           <h1 className="text-4xl font-bold mb-4 text-primary">404</h1>
           <p className="text-xl text-muted-foreground mb-4">Oops! Página no encontrada</p>
-          <a href="/" className="text-primary hover:text-primary/80 underline transition-colors">
+          <Link to="/" className="text-primary hover:text-primary/80 underline transition-colors">
             Volver al Inicio
-          </a>
+          </Link>
         </div>
       </div>
       <FooterSection />

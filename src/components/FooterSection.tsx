@@ -1,4 +1,5 @@
 import { Instagram, Youtube, Linkedin } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const FooterSection = () => {
   return (
@@ -22,12 +23,12 @@ const FooterSection = () => {
             <div className="col-span-7 md:col-span-3 order-1 md:order-1">
               <h4 className="text-white font-medium mb-6 text-sm">Servicios</h4>
               <ul className="space-y-3 text-muted-foreground">
-                <li><a href="/servicios" className="hover:text-primary transition-colors text-sm">Performance Digital & IA</a></li>
-                <li><a href="/servicios" className="hover:text-primary transition-colors text-sm">IA Conversacional</a></li>
-                <li><a href="/servicios" className="hover:text-primary transition-colors text-sm">Conversion Rate Optimization</a></li>
-                <li><a href="/servicios" className="hover:text-primary transition-colors text-sm">SEO Potenciado por IA</a></li>
-                <li><a href="/servicios" className="hover:text-primary transition-colors text-sm">Medios Digitales</a></li>
-                <li><a href="/servicios" className="hover:text-primary transition-colors text-sm">Automatización de Marketing</a></li>
+                <li><Link to="/servicios" className="hover:text-primary transition-colors text-sm">Performance Digital & IA</Link></li>
+                <li><Link to="/servicios" className="hover:text-primary transition-colors text-sm">IA Conversacional</Link></li>
+                <li><Link to="/servicios" className="hover:text-primary transition-colors text-sm">Conversion Rate Optimization</Link></li>
+                <li><Link to="/servicios" className="hover:text-primary transition-colors text-sm">SEO Potenciado por IA</Link></li>
+                <li><Link to="/servicios" className="hover:text-primary transition-colors text-sm">Medios Digitales</Link></li>
+                <li><Link to="/servicios" className="hover:text-primary transition-colors text-sm">Automatización de Marketing</Link></li>
               </ul>
             </div>
 

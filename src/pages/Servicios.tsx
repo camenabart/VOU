@@ -108,7 +108,7 @@ const Servicios = () => {
             <div className="container mx-auto px-4">
               <div className="grid grid-cols-1 gap-8 max-w-4xl mx-auto">
                 {/* Performance Digital & IA */}
-                <div className="bg-black rounded-lg shadow-lg overflow-hidden min-h-[345px] flex border border-gray-800">
+                <div className="bg-black rounded-lg shadow-lg overflow-hidden h-[400px] flex border border-gray-800">
                   <div className="flex-1 p-6 lg:p-8 flex flex-col justify-center">
                     <h3 className="text-xl lg:text-2xl font-bold text-white mb-3 lg:mb-4">Performance potenciado por datos y modelos</h3>
                     <div className="text-sm lg:text-base text-gray-300 leading-relaxed mb-4 space-y-2">
@@ -122,22 +122,22 @@ const Servicios = () => {
                       <span className="text-lg">›</span>
                     </button>
                   </div>
-                  <div className="w-1/2">
+                  <div className="w-1/2 h-full">
                     <img 
                       src="/lovable-uploads/1.png" 
                       alt="Performance Digital & IA"
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover object-center"
                     />
                   </div>
                 </div>
 
                 {/* IA Conversacional */}
-                <div className="bg-black rounded-lg shadow-lg overflow-hidden min-h-[345px] flex border border-gray-800">
-                  <div className="w-1/2">
+                <div className="bg-black rounded-lg shadow-lg overflow-hidden h-[400px] flex border border-gray-800">
+                  <div className="w-1/2 h-full">
                     <img 
                       src="/lovable-uploads/2.png" 
                       alt="IA Conversacional"
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover object-center"
                     />
                   </div>
                   <div className="flex-1 p-6 lg:p-8 flex flex-col justify-center">
@@ -156,7 +156,7 @@ const Servicios = () => {
                 </div>
 
                 {/* Automatización e Integración Tecnológica */}
-                <div className="bg-black rounded-lg shadow-lg overflow-hidden min-h-[345px] flex border border-gray-800">
+                <div className="bg-black rounded-lg shadow-lg overflow-hidden h-[400px] flex border border-gray-800">
                   <div className="flex-1 p-6 lg:p-8 flex flex-col justify-center">
                     <h3 className="text-xl lg:text-2xl font-bold text-white mb-3 lg:mb-4">Automatización e Integración Tecnológica</h3>
                     <div className="text-sm lg:text-base text-gray-300 leading-relaxed mb-4 space-y-2">
@@ -169,22 +169,22 @@ const Servicios = () => {
                       <span className="text-lg">›</span>
                     </button>
                   </div>
-                  <div className="w-1/2">
+                  <div className="w-1/2 h-full">
                     <img 
                       src="/lovable-uploads/3.png" 
                       alt="Automatización e Integración Tecnológica"
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover object-center"
                     />
                   </div>
                 </div>
 
                 {/* Creatividad Generativa orientada a performance */}
-                <div className="bg-black rounded-lg shadow-lg overflow-hidden min-h-[345px] flex border border-gray-800">
-                  <div className="w-1/2">
+                <div className="bg-black rounded-lg shadow-lg overflow-hidden h-[400px] flex border border-gray-800">
+                  <div className="w-1/2 h-full">
                     <img 
                       src="/lovable-uploads/4.png" 
                       alt="Creatividad Generativa orientada a performance"
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover object-center"
                     />
                   </div>
                   <div className="flex-1 p-6 lg:p-8 flex flex-col justify-center">
