@@ -49,34 +49,44 @@ const TechnologySection = () => {
       alt: "Semrush"
     },
     {
-      name: "Google Partner",
-      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/2560px-Google_2015_logo.svg.png",
-      alt: "Google Partner Premium"
+      name: "BUK",
+      image: "https://www.moov.cl/wp-content/uploads/sites/7/2024/11/BUK.png",
+      alt: "BUK"
     },
     {
-      name: "HubSpot Gold Partner",
-      image: "https://www.hubspot.com/hubfs/HubSpot_Logos/HubSpot-Inversed-Favicon.png",
-      alt: "HubSpot Gold Partner"
+      name: "Festival ACHAP",
+      image: "https://www.moov.cl/wp-content/uploads/sites/7/2024/11/festival-achap-300x159.png",
+      alt: "Festival ACHAP"
+    },
+    {
+      name: "Premier Partner",
+      image: "https://www.moov.cl/wp-content/uploads/sites/7/2025/03/PremierPartner-RGB.png",
+      alt: "Premier Partner"
+    },
+    {
+      name: "Endeavor",
+      image: "https://www.moov.cl/wp-content/uploads/sites/7/2024/11/endeavor-300x149.png",
+      alt: "Endeavor"
+    },
+    {
+      name: "HubSpot",
+      image: "https://www.moov.cl/wp-content/uploads/sites/7/2024/11/hubspot.png",
+      alt: "HubSpot"
+    },
+    {
+      name: "Conectif",
+      image: "https://www.moov.cl/wp-content/uploads/sites/7/2024/11/conectif.png",
+      alt: "Conectif"
     },
     {
       name: "Shopify Partners",
-      image: "https://cdn.shopify.com/s/files/1/0070/7032/files/shopify_logo_darkbg.svg",
+      image: "https://www.moov.cl/wp-content/uploads/sites/7/2024/11/shopify-partners-300x112.png",
       alt: "Shopify Partners"
     },
     {
       name: "AWS Partner",
-      image: "https://a0.awsstatic.com/libra-css/images/logos/aws_logo_smile_1200x630.png",
-      alt: "AWS Partner Network"
-    },
-    {
-      name: "Endeavor",
-      image: "https://endeavor.org/wp-content/uploads/2021/03/endeavor-logo-white.svg",
-      alt: "Endeavor"
-    },
-    {
-      name: "Connectif",
-      image: "https://connectif.ai/wp-content/uploads/2020/02/connectif-logo-dark.svg",
-      alt: "Connectif Select"
+      image: "https://www.moov.cl/wp-content/uploads/sites/7/2024/11/AWS-partner-300x100.png",
+      alt: "AWS Partner"
     }
   ];
 
