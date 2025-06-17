@@ -40,10 +40,10 @@ const HeroSection = () => {
             {/* Simplified tagline and value prop */}
             <div className="animate-fade-in-delayed max-w-5xl">
               <h1 className="title-hero text-primary mb-8 tracking-tight drop-shadow-lg" data-aos="fade-down">
-                Your ai-powered growth partner
+                Your AI-Powered Growth Partner
               </h1>
               <p className="subtitle text-white/90 leading-relaxed mb-12 drop-shadow-md" data-aos="fade-up">
-                Agencia de medios digitales que integra ia y datos para escalar tu performance.
+                Soluciones de marketing digital escalables que integra data e IA
               </p>
               
               {/* Down Arrow */}

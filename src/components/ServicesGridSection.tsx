@@ -1,7 +1,7 @@
 const ServicesGridSection = () => {
   const services = [
     {
-      title: "Performance potenciado por datos y modelos",
+      title: "Performance potenciado por datos y modelos (SEO/SEM/CRO)",
       image: "/lovable-uploads/1.png",
       alt: "Medios-digitales-performance-and-branding",
       link: "/servicios"
@@ -13,13 +13,13 @@ const ServicesGridSection = () => {
       link: "/servicios"
     },
     {
-      title: "Automatización e Integración Tecnológica",
+      title: "Automatización e integración tecnológica (CRM/CDP)",
       image: "/lovable-uploads/3.png",
       alt: "Automatización",
       link: "/servicios"
     },
     {
-      title: "Creatividad Generativa orientada a performance",
+      title: "Creatividad generativa orientada a performance",
       image: "/lovable-uploads/4.png",
       alt: "Creatividad Generativa",
       link: "/servicios"

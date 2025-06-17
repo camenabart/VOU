@@ -25,11 +25,10 @@ const NosotrosSection = () => {
           <div className="animate-fade-in-up">
             <div className="space-y-6 text-foreground leading-relaxed">
               <p className="text-sm opacity-90">
-                Somos VOU, la unidad especializada en performance digital y soluciones de medios 
-                potenciadas por datos e Inteligencia Artificial de Moov Media Group. Nuestro objetivo es hacer crecer tu negocio a través del análisis de la información y herramientas que nos permiten identificar y definir oportunidades eficientes de inversión.
+                VOU es la unidad especializada en performance digital y en soluciones de medios potenciadas por datos e Inteligencia Artificial de Moov Media Group.
               </p>
               <p className="text-sm opacity-90">
-                Por eso no solo identificamos audiencias, también definimos los medios y acciones de marketing para comunicarnos con ellas de manera inteligente y oportuna, conectando eficazmente con su necesidad a través de IA, automatización y agentes inteligentes verticales.
+                Con un enfoque full-funnel y data-driven, VOU aplica modelos predictivos, automatización y agentes inteligentes verticales para escalar resultados con precisión y eficiencia. La IA está integrada transversalmente en todas las soluciones de medios, potenciando su efectividad, automatización y capacidad de adaptación en tiempo real.
               </p>
             </div>
             

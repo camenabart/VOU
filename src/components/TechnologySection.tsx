@@ -47,6 +47,36 @@ const TechnologySection = () => {
       name: "Semrush",
       image: "https://www.metrix.digital/wp-content/uploads/sites/8/2023/03/Semrush.png",
       alt: "Semrush"
+    },
+    {
+      name: "Google Partner",
+      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/2560px-Google_2015_logo.svg.png",
+      alt: "Google Partner Premium"
+    },
+    {
+      name: "HubSpot Gold Partner",
+      image: "https://www.hubspot.com/hubfs/HubSpot_Logos/HubSpot-Inversed-Favicon.png",
+      alt: "HubSpot Gold Partner"
+    },
+    {
+      name: "Shopify Partners",
+      image: "https://cdn.shopify.com/s/files/1/0070/7032/files/shopify_logo_darkbg.svg",
+      alt: "Shopify Partners"
+    },
+    {
+      name: "AWS Partner",
+      image: "https://a0.awsstatic.com/libra-css/images/logos/aws_logo_smile_1200x630.png",
+      alt: "AWS Partner Network"
+    },
+    {
+      name: "Endeavor",
+      image: "https://endeavor.org/wp-content/uploads/2021/03/endeavor-logo-white.svg",
+      alt: "Endeavor"
+    },
+    {
+      name: "Connectif",
+      image: "https://connectif.ai/wp-content/uploads/2020/02/connectif-logo-dark.svg",
+      alt: "Connectif Select"
     }
   ];
 
