@@ -124,7 +124,7 @@ const Servicios = () => {
                   </div>
                   <div className="w-1/2">
                     <img 
-                      src="/lovable-uploads/5.png" 
+                      src="/lovable-uploads/1.png" 
                       alt="Performance Digital & IA"
                       className="w-full h-full object-cover"
                     />
@@ -135,7 +135,7 @@ const Servicios = () => {
                 <div className="bg-black rounded-lg shadow-lg overflow-hidden min-h-[345px] flex border border-gray-800">
                   <div className="w-1/2">
                     <img 
-                      src="/lovable-uploads/5.png" 
+                      src="/lovable-uploads/2.png" 
                       alt="IA Conversacional"
                       className="w-full h-full object-cover"
                     />
@@ -171,7 +171,7 @@ const Servicios = () => {
                   </div>
                   <div className="w-1/2">
                     <img 
-                      src="/lovable-uploads/5.png" 
+                      src="/lovable-uploads/3.png" 
                       alt="Automatización e Integración Tecnológica"
                       className="w-full h-full object-cover"
                     />
@@ -182,7 +182,7 @@ const Servicios = () => {
                 <div className="bg-black rounded-lg shadow-lg overflow-hidden min-h-[345px] flex border border-gray-800">
                   <div className="w-1/2">
                     <img 
-                      src="/lovable-uploads/5.png" 
+                      src="/lovable-uploads/4.png" 
                       alt="Creatividad Generativa orientada a performance"
                       className="w-full h-full object-cover"
                     />
