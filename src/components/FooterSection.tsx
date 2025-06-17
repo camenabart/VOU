@@ -104,7 +104,7 @@ const FooterSection = () => {
                  <a href="https://www.youtube.com/@MoovMediaGroup" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors p-2 rounded-full hover:bg-primary/10">
                    <Youtube size={18} />
                  </a>
-                 <a href="https://www.linkedin.com/company/moov-digital" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors p-2 rounded-full hover:bg-primary/10">
+                 <a href="https://www.linkedin.com/company/vouagencycl/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors p-2 rounded-full hover:bg-primary/10">
                    <Linkedin size={18} />
                  </a>
                  <a href="https://www.tiktok.com/@moovmediagroup" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors p-2 rounded-full hover:bg-primary/10">
