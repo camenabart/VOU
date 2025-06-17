@@ -18,6 +18,10 @@ const PerformanceCarousel = () => {
     }
   };
 
+  // SECCIÓN COMENTADA TEMPORALMENTE - Casos de estudio Repuestodo
+  return null;
+
+  /*
   return (
     <section id="nosotros" className="py-20 bg-background">
       <div className="container mx-auto px-4 lg:px-8">
@@ -34,7 +38,7 @@ const PerformanceCarousel = () => {
       <div className="w-full">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[500px]">
-            {/* Left column - Black container with content */}
+            {/* Left column - Black container with content *//*}
             <div className="bg-black text-white p-8 lg:p-12 flex flex-col justify-center">
               <p className="text-primary text-sm mb-4 uppercase tracking-wider">
                 Ecommerce strategy & data management
@@ -60,7 +64,7 @@ const PerformanceCarousel = () => {
               </div>
             </div>
             
-            {/* Right column - Background image */}
+            {/* Right column - Background image *//*}
             <div 
               className="bg-cover bg-center bg-no-repeat min-h-[400px] lg:min-h-[500px] rounded-lg"
               style={{
@@ -83,6 +87,7 @@ const PerformanceCarousel = () => {
       </div>
     </section>
   );
+  */
 };
 
 export default PerformanceCarousel;

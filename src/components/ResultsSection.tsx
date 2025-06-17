@@ -45,9 +45,13 @@ const ResultsSection = () => {
     }
   ];
 
+  // SECCIÓN COMENTADA TEMPORALMENTE - Resultados con porcentajes
+  return null;
+  
+  /* 
   return (
     <section id="resultados" className="py-20 pb-8 bg-black relative overflow-hidden">
-      {/* Animated background */}
+      {/* Animated background *//*}
       <div className="absolute inset-0">
         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-primary/5 to-transparent" />
       </div>
@@ -79,7 +83,7 @@ const ResultsSection = () => {
           ))}
         </div>
 
-        {/* Ver más button */}
+        {/* Ver más button *//*}
         <div className="text-center mb-32" data-aos="fade-up">
           <button 
             onClick={() => navigate('/resultados')}
@@ -95,6 +99,7 @@ const ResultsSection = () => {
       </div>
     </section>
   );
+  */
 };
 
 export default ResultsSection;

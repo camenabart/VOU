@@ -2,7 +2,6 @@ import { Card } from "@/components/ui/card";
 
 const ClientsLogosSection = () => {
   const clients = [
-
     {
       name: "El Volcán",
       logo: "/lovable-uploads/volcan.png",
@@ -29,19 +28,24 @@ const ClientsLogosSection = () => {
       alt: "Peaky Nuts"
     },
     {
-      name: "EM",
-      logo: "/lovable-uploads/em.png",
-      alt: "EM"
-    },
-    {
       name: "Red Salud",
       logo: "/lovable-uploads/redsalud.png",
       alt: "redsalud"
     },
     {
-      name: "DEPORT",
-      logo: "/lovable-uploads/deport.png",
-      alt: "deport"
+      name: "Colum",
+      logo: "/lovable-uploads/colum.png",
+      alt: "Colum"
+    },
+    {
+      name: "Converse",
+      logo: "/lovable-uploads/converse.png",
+      alt: "Converse"
+    },
+    {
+      name: "SM",
+      logo: "/lovable-uploads/sm.png",
+      alt: "SM"
     },
   ];
 
