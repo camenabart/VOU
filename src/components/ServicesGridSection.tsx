@@ -5,10 +5,10 @@ const ServicesGridSection = () => {
 
   const handleServiceClick = () => {
     navigate('/servicios');
-    // Asegurar que vaya al top de la página
+    // Asegurar que vaya al header de la página de servicios
     setTimeout(() => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
-    }, 100);
+    }, 200);
   };
 
   const services = [

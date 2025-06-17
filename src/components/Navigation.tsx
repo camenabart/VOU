@@ -24,6 +24,10 @@ const Navigation = () => {
   const navigateToPage = (path: string) => {
     navigate(path);
     setIsMenuOpen(false); // Close mobile menu after clicking
+    // Asegurar que vaya al header de la página
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, 200);
   };
 
   return (

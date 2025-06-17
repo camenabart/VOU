@@ -252,18 +252,18 @@ const NuestroEquipo = () => {
               Lideran Vou
             </h2>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {/* Team Member 1 - Cecilia Galaz */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl mx-auto">
+              {/* Team Member 1 - Alejandro Band Bastías */}
               <div className="text-left">
                 <figure className="mb-4">
                   <img 
-                    src="https://www.moov.cl/wp-content/uploads/sites/7/2022/08/Cecilia-Galaz.png" 
-                    alt="Cecilia Galaz" 
+                    src="/lovable-uploads/ale.png" 
+                    alt="Alejandro Band Bastías" 
                     className="w-full h-64 object-cover object-top"
                   />
                 </figure>
                 <a 
-                  href="https://www.linkedin.com/in/cecilia-galaz-vi%C3%B1als-76416481/" 
+                  href="https://www.linkedin.com/in/alejandro-band-bast%C3%ADas-8a6136b6/" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="inline-block mb-4"
@@ -271,25 +271,25 @@ const NuestroEquipo = () => {
                   <Linkedin className="w-6 h-6 text-gray-500 hover:text-primary transition-colors" />
                 </a>
                 <h3 className="text-sm text-foreground mb-2">
-                  Managing Director
+                  Head of Agency
                 </h3>
                 <h4 className="text-xl font-semibold text-foreground mb-2">
-                  Cecilia Galaz
+                  Alejandro Band Bastías
                 </h4>
                 <div className="w-16 h-0.5 bg-primary"></div>
               </div>
 
-              {/* Team Member 2 - Cami Alarma */}
+              {/* Team Member 2 - María José Valdés */}
               <div className="text-left">
                 <figure className="mb-4">
                   <img 
-                    src="https://www.moov.cl/wp-content/uploads/sites/7/2022/10/Camila-Alarma.png" 
-                    alt="Cami Alarma" 
+                    src="/lovable-uploads/cote.png" 
+                    alt="María José Valdés" 
                     className="w-full h-64 object-cover object-top"
                   />
                 </figure>
                 <a 
-                  href="https://www.linkedin.com/in/camila-alarma-herrmann-22359230/" 
+                  href="https://www.linkedin.com/in/mjosev/" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="inline-block mb-4"
@@ -297,66 +297,13 @@ const NuestroEquipo = () => {
                   <Linkedin className="w-6 h-6 text-gray-500 hover:text-primary transition-colors" />
                 </a>
                 <h3 className="text-sm text-foreground mb-2">
-                  Directora de Planning y Construcción de Marca
+                  Head of Performance
                 </h3>
                 <h4 className="text-xl font-semibold text-foreground mb-2">
-                  Cami Alarma
+                  María José Valdés
                 </h4>
                 <div className="w-16 h-0.5 bg-primary"></div>
               </div>
-
-              {/* Team Member 3 - Eduardo Herreros */}
-              <div className="text-left">
-                <figure className="mb-4">
-                  <img 
-                    src="https://www.moov.cl/wp-content/uploads/sites/7/2023/10/Eduardo-Herreros.png" 
-                    alt="Eduardo Herreros" 
-                    className="w-full h-64 object-cover object-top"
-                  />
-                </figure>
-                <a 
-                  href="https://www.linkedin.com/in/eherrerosy/" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="inline-block mb-4"
-                >
-                  <Linkedin className="w-6 h-6 text-gray-500 hover:text-primary transition-colors" />
-                </a>
-                <h3 className="text-sm text-foreground mb-2">
-                  Director de Operaciones
-                </h3>
-                <h4 className="text-xl font-semibold text-foreground mb-2">
-                  Eduardo Herreros
-                </h4>
-                <div className="w-16 h-0.5 bg-primary"></div>
-              </div>
-
-              {/* Team Member 4 - Madelaine Calfuleo */}
-              <div className="text-left">
-                <figure className="mb-4">
-                  <img 
-                    src="https://www.moov.cl/wp-content/uploads/sites/7/2024/01/Madi-497x493-1.webp" 
-                    alt="Madelaine Calfuleo" 
-                    className="w-full h-64 object-cover object-top"
-                  />
-                </figure>
-                <a 
-                  href="https://www.linkedin.com/in/madelaine-calfuleo/" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="inline-block mb-4"
-                >
-                  <Linkedin className="w-6 h-6 text-gray-500 hover:text-primary transition-colors" />
-                </a>
-                <h3 className="text-sm text-foreground mb-2">
-                  Directora de Contenidos y Redes Sociales
-                </h3>
-                <h4 className="text-xl font-semibold text-foreground mb-2">
-                  Madelaine Calfuleo
-                </h4>
-                <div className="w-16 h-0.5 bg-primary"></div>
-              </div>
-
 
             </div>
           </div>
