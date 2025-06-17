@@ -25,32 +25,59 @@ const Contacto = () => {
     setSubmitStatus('idle');
 
     try {
-      // Verificar que EmailJS esté disponible
-      if (!window.emailjs) {
-        throw new Error('EmailJS no está disponible');
+      // Verificar si EmailJS está configurado correctamente
+      const isEmailJSConfigured = 
+        window.emailjs && 
+        EMAILJS_CONFIG.serviceId !== 'YOUR_SERVICE_ID' &&
+        EMAILJS_CONFIG.templateId !== 'YOUR_TEMPLATE_ID' &&
+        EMAILJS_CONFIG.publicKey !== 'YOUR_PUBLIC_KEY';
+
+      if (isEmailJSConfigured) {
+        // Usar EmailJS si está configurado
+        const templateParams = {
+          from_name: formData.name,
+          from_email: formData.email,
+          company: formData.company || 'No especificada',
+          phone: formData.phone || 'No especificado',
+          service: formData.service || 'No especificado',
+          message: formData.message || 'Sin mensaje adicional',
+          to_email: 'alejandro@agenciavou.cl,catalina.amenabar@agenciavou.cl,mariajose.valdes@agenciavou.cl'
+        };
+
+        await window.emailjs.send(
+          EMAILJS_CONFIG.serviceId,
+          EMAILJS_CONFIG.templateId,
+          templateParams,
+          EMAILJS_CONFIG.publicKey
+        );
+        
+        setSubmitStatus('success');
+      } else {
+        // Fallback a mailto si EmailJS no está configurado
+        const emailBody = `
+Nueva solicitud de asesoría desde VOU.digital
+
+Datos del contacto:
+- Nombre: ${formData.name}
+- Email: ${formData.email}
+- Empresa: ${formData.company || 'No especificada'}
+- Teléfono: ${formData.phone || 'No especificado'}
+- Servicio de interés: ${formData.service || 'No especificado'}
+
+Mensaje:
+${formData.message || 'Sin mensaje adicional'}
+
+---
+Este email fue enviado desde el formulario de contacto de VOU.digital
+        `;
+
+        const subject = encodeURIComponent(`Nueva solicitud de asesoría - ${formData.name}`);
+        const body = encodeURIComponent(emailBody);
+        const mailtoLink = `mailto:alejandro@agenciavou.cl,catalina.amenabar@agenciavou.cl,mariajose.valdes@agenciavou.cl?subject=${subject}&body=${body}`;
+        
+        window.open(mailtoLink, '_blank');
+        setSubmitStatus('success');
       }
-
-      // Preparar los parámetros del template
-      const templateParams = {
-        from_name: formData.name,
-        from_email: formData.email,
-        company: formData.company || 'No especificada',
-        phone: formData.phone || 'No especificado',
-        service: formData.service || 'No especificado',
-        message: formData.message || 'Sin mensaje adicional',
-        to_email: 'alejandro@agenciavou.cl,catalina.amenabar@agenciavou.cl,mariajose.valdes@agenciavou.cl'
-      };
-
-      // Enviar el email usando EmailJS
-      await window.emailjs.send(
-        EMAILJS_CONFIG.serviceId,
-        EMAILJS_CONFIG.templateId,
-        templateParams,
-        EMAILJS_CONFIG.publicKey
-      );
-      
-      // Mostrar mensaje de éxito
-      setSubmitStatus('success');
       
       // Limpiar formulario después de 3 segundos
       setTimeout(() => {
@@ -284,7 +311,7 @@ const Contacto = () => {
                 {submitStatus === 'success' && (
                   <div className="flex items-center gap-2 p-4 bg-green-500/20 border border-green-500/30 rounded-lg text-green-400">
                     <CheckCircle size={20} />
-                    <span>¡Solicitud de asesoría enviada exitosamente! Nos pondremos en contacto contigo en las próximas 24 horas.</span>
+                    <span>¡Solicitud procesada exitosamente! Te contactaremos en las próximas 24 horas.</span>
                   </div>
                 )}
                 
