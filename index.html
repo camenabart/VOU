@@ -30,9 +30,19 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script type="text/javascript">
       (function(){
-         emailjs.init({
-           publicKey: "K-MTrrx59hF2h5QDB",
-         });
+        // Esperar a que EmailJS se cargue completamente
+        const initEmailJS = () => {
+          if (typeof emailjs !== 'undefined') {
+            emailjs.init({
+              publicKey: "K-MTrrx59hF2h5QDB",
+            });
+            console.log('EmailJS inicializado correctamente');
+          } else {
+            console.log('Esperando a EmailJS...');
+            setTimeout(initEmailJS, 100);
+          }
+        };
+        initEmailJS();
       })();
     </script>
     <script type="module" src="/src/main.tsx"></script>

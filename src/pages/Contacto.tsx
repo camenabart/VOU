@@ -25,12 +25,18 @@ const Contacto = () => {
     setSubmitStatus('idle');
 
     try {
+      console.log('=== DEBUG FORMULARIO ===');
+      console.log('EmailJS disponible:', !!window.emailjs);
+      console.log('Configuración:', EMAILJS_CONFIG);
+      
       // Verificar si EmailJS está configurado correctamente
       const isEmailJSConfigured = 
         window.emailjs && 
         EMAILJS_CONFIG.serviceId !== 'YOUR_SERVICE_ID' &&
         EMAILJS_CONFIG.templateId !== 'YOUR_TEMPLATE_ID' &&
         EMAILJS_CONFIG.publicKey !== 'YOUR_PUBLIC_KEY';
+
+      console.log('EmailJS configurado:', isEmailJSConfigured);
 
       if (isEmailJSConfigured) {
         // Usar EmailJS si está configurado
@@ -44,13 +50,16 @@ const Contacto = () => {
           to_email: 'alejandro@agenciavou.cl,catalina.amenabar@agenciavou.cl,mariajose.valdes@agenciavou.cl'
         };
 
-        await window.emailjs.send(
+        console.log('Enviando con EmailJS...', templateParams);
+        
+        const result = await window.emailjs.send(
           EMAILJS_CONFIG.serviceId,
           EMAILJS_CONFIG.templateId,
           templateParams,
           EMAILJS_CONFIG.publicKey
         );
         
+        console.log('Resultado EmailJS:', result);
         setSubmitStatus('success');
       } else {
         // Fallback a mailto si EmailJS no está configurado
