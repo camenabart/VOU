@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const ServicesGridSection = () => {
   const services = [
     {
@@ -41,19 +43,19 @@ const ServicesGridSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
           {services.map((service, index) => (
             <div key={index} className="service" data-aos="fade-up" data-aos-delay={index * 100}>
-              <a href={service.link} className="block mb-4">
+              <Link to={service.link} className="block mb-4">
                 <img 
                   src={service.image} 
                   alt={service.alt}
                   className="w-full h-48 lg:h-56 object-cover rounded-lg hover:scale-105 transition-transform duration-300"
                 />
-              </a>
-              <a 
-                href={service.link}
+              </Link>
+              <Link 
+                to={service.link}
                 className="text-foreground hover:text-primary transition-colors font-medium text-base"
               >
                 {service.title}
-              </a>
+              </Link>
             </div>
           ))}
         </div>

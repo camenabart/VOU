@@ -53,12 +53,6 @@ const Navigation = () => {
               Nosotros
             </button>
             <button 
-              onClick={() => navigateToPage('/resultados')}
-              className="text-white hover:text-white/80 transition-colors cursor-pointer"
-            >
-              Casos de estudio
-            </button>
-            <button 
               onClick={() => navigateToPage('/servicios')}
               className="text-white hover:text-white/80 transition-colors cursor-pointer"
             >
@@ -91,12 +85,6 @@ const Navigation = () => {
                 className="text-white hover:text-white/80 transition-colors text-left"
               >
                 Nosotros
-              </button>
-              <button 
-                onClick={() => navigateToPage('/resultados')}
-                className="text-white hover:text-white/80 transition-colors text-left"
-              >
-                Casos de estudio
               </button>
               <button 
                 onClick={() => navigateToPage('/servicios')}
