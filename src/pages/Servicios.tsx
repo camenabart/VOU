@@ -204,7 +204,8 @@ const Servicios = () => {
             </div>
           </section>
 
-          {/* Tools Section */}
+          {/* Tools Section - COMENTADO TEMPORALMENTE */}
+          {/*
           <div className="max-w-6xl mx-auto mb-20">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold text-foreground mb-4">
@@ -231,6 +232,7 @@ const Servicios = () => {
               ))}
             </div>
           </div>
+          */}
 
 
         </div>

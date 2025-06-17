@@ -15,7 +15,7 @@ const NosotrosSection = () => {
           <div className="animate-fade-in-up">
             <p className="text-2xl text-primary mb-6 font-medium">Somos</p>
             <img 
-              src="/lovable-uploads/logo.png" 
+              src="/lovable-uploads/VOU.png" 
               alt="VOU Logo" 
               className="w-full max-w-xs h-auto object-contain"
             />

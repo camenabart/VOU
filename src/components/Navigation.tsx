@@ -37,7 +37,7 @@ const Navigation = () => {
               className="cursor-pointer hover:opacity-80 transition-opacity"
             >
               <img 
-                src="/lovable-uploads/logo.png" 
+                src="/lovable-uploads/VOU.png" 
                 alt="VOU Logo" 
                 className="h-8 w-auto"
               />

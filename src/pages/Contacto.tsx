@@ -1,7 +1,7 @@
 import Navigation from "@/components/Navigation";
 import SuperHeader from "@/components/SuperHeader";
 import FooterSection from "@/components/FooterSection";
-import { ArrowLeft, Mail, Phone, MapPin, Clock } from "lucide-react";
+import { ArrowLeft, Mail, Phone, MapPin, Clock, CheckCircle, XCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
@@ -15,10 +15,59 @@ const Contacto = () => {
     message: ''
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    console.log('Form submitted:', formData);
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+
+    try {
+      // Crear el mensaje de email
+      const emailBody = `
+        Nuevo contacto desde VOU.digital
+        
+        Nombre: ${formData.name}
+        Email: ${formData.email}
+        Empresa: ${formData.company || 'No especificada'}
+        Teléfono: ${formData.phone || 'No especificado'}
+        Servicio de interés: ${formData.service || 'No especificado'}
+        
+        Mensaje:
+        ${formData.message || 'Sin mensaje adicional'}
+      `;
+
+      // Crear el link mailto
+      const subject = encodeURIComponent(`Nuevo contacto desde VOU - ${formData.name}`);
+      const body = encodeURIComponent(emailBody);
+      const mailtoLink = `mailto:alejandro@agenciavou.cl,catalina.amenabar@agenciavou.cl,mariajose.valdes@agenciavou.cl?subject=${subject}&body=${body}`;
+      
+      // Abrir cliente de email
+      window.open(mailtoLink, '_blank');
+      
+      // Mostrar mensaje de éxito
+      setSubmitStatus('success');
+      
+      // Limpiar formulario después de 2 segundos
+      setTimeout(() => {
+        setFormData({
+          name: '',
+          email: '',
+          company: '',
+          phone: '',
+          service: '',
+          message: ''
+        });
+        setSubmitStatus('idle');
+      }, 3000);
+      
+    } catch (error) {
+      console.error('Error al enviar formulario:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -47,7 +96,7 @@ const Contacto = () => {
     {
       icon: <Mail className="w-6 h-6 text-primary" />,
       title: "Email",
-      info: "hola@vou.digital"
+      info: "alejandro@agenciavou.cl"
     },
     {
       icon: <Phone className="w-6 h-6 text-primary" />,
@@ -215,10 +264,33 @@ const Contacto = () => {
 
                 <button
                   type="submit"
-                  className="w-full bg-primary hover:bg-primary/90 text-white py-4 rounded-lg font-medium transition-colors"
+                  disabled={isSubmitting}
+                  className="w-full bg-primary hover:bg-primary/90 disabled:bg-gray-600 disabled:cursor-not-allowed text-white py-4 rounded-lg font-medium transition-colors flex items-center justify-center gap-2"
                 >
-                  Enviar mensaje
+                  {isSubmitting ? (
+                    <>
+                      <div className="animate-spin h-5 w-5 border-2 border-white border-t-transparent rounded-full"></div>
+                      Enviando...
+                    </>
+                  ) : (
+                    'Enviar mensaje'
+                  )}
                 </button>
+
+                {/* Success/Error Messages */}
+                {submitStatus === 'success' && (
+                  <div className="flex items-center gap-2 p-4 bg-green-500/20 border border-green-500/30 rounded-lg text-green-400">
+                    <CheckCircle size={20} />
+                    <span>¡Formulario procesado! Se abrirá tu cliente de email para enviar la consulta.</span>
+                  </div>
+                )}
+                
+                {submitStatus === 'error' && (
+                  <div className="flex items-center gap-2 p-4 bg-red-500/20 border border-red-500/30 rounded-lg text-red-400">
+                    <XCircle size={20} />
+                    <span>Hubo un error. Por favor, intenta nuevamente o contáctanos directamente a alejandro@agenciavou.cl</span>
+                  </div>
+                )}
               </form>
             </div>
 

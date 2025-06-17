@@ -11,7 +11,7 @@ const FooterSection = () => {
             <div className="col-span-12 md:col-span-3 order-0 md:order-1">
               <div className="footer-logo">
                 <img 
-                  src="/lovable-uploads/logo.png" 
+                  src="/lovable-uploads/VOU.png" 
                   alt="VOU Logo"
                   className="h-12 w-auto"
                 />
