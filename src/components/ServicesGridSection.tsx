@@ -18,7 +18,7 @@ const ServicesGridSection = () => {
     },
     {
       title: "Creatividad generativa orientada a performance",
-      image: "/lovable-uploads/4.png",
+      image: "/lovable-uploads/foto6.png",
       alt: "Creatividad Generativa"
     }
   ];

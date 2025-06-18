@@ -182,7 +182,7 @@ const Servicios = () => {
                 <div className="bg-black rounded-lg shadow-lg overflow-hidden h-[400px] flex border border-gray-800">
                   <div className="w-1/2 h-full">
                     <img 
-                      src="/lovable-uploads/4.png" 
+                      src="/lovable-uploads/foto6.png" 
                       alt="Creatividad Generativa orientada a performance"
                       className="w-full h-full object-cover object-center"
                     />
