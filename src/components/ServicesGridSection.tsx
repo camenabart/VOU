@@ -1,15 +1,4 @@
-import { useNavigate } from "react-router-dom";
-
 const ServicesGridSection = () => {
-  const navigate = useNavigate();
-
-  const handleServiceClick = () => {
-    navigate('/servicios');
-    // Asegurar que vaya al header de la página de servicios
-    setTimeout(() => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }, 200);
-  };
 
   const services = [
     {
@@ -49,19 +38,16 @@ const ServicesGridSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
           {services.map((service, index) => (
             <div key={index} className="service" data-aos="fade-up" data-aos-delay={index * 100}>
-              <button onClick={handleServiceClick} className="block mb-4 w-full">
+              <div className="block mb-4 w-full">
                 <img 
                   src={service.image} 
                   alt={service.alt}
-                  className="w-full h-48 lg:h-56 object-cover rounded-lg hover:scale-105 transition-transform duration-300"
+                  className="w-full h-48 lg:h-56 object-cover rounded-lg"
                 />
-              </button>
-              <button 
-                onClick={handleServiceClick}
-                className="text-foreground hover:text-primary transition-colors font-medium text-base text-left"
-              >
+              </div>
+              <h3 className="text-foreground font-medium text-base text-left">
                 {service.title}
-              </button>
+              </h3>
             </div>
           ))}
         </div>

@@ -23,10 +23,10 @@ const FooterSection = () => {
             <div className="col-span-7 md:col-span-3 order-1 md:order-1">
               <h4 className="text-white font-medium mb-6 text-sm">Servicios</h4>
               <ul className="space-y-3 text-muted-foreground">
-                <li><Link to="/servicios" className="hover:text-primary transition-colors text-sm">Performance potenciado por datos y modelos</Link></li>
-                <li><Link to="/servicios" className="hover:text-primary transition-colors text-sm">IA Conversacional al servicio de la experiencia del cliente</Link></li>
-                <li><Link to="/servicios" className="hover:text-primary transition-colors text-sm">Automatización e integración tecnológica</Link></li>
-                <li><Link to="/servicios" className="hover:text-primary transition-colors text-sm">Creatividad generativa orientada a performance</Link></li>
+                <li><span className="text-sm">Performance potenciado por datos y modelos</span></li>
+                <li><span className="text-sm">IA Conversacional al servicio de la experiencia del cliente</span></li>
+                <li><span className="text-sm">Automatización e integración tecnológica</span></li>
+                <li><span className="text-sm">Creatividad generativa orientada a performance</span></li>
               </ul>
             </div>
 

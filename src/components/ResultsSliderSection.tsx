@@ -67,22 +67,7 @@ const ResultsSliderSection = () => {
                         </p>
                       </div>
                       
-                      <div className="flex flex-col sm:flex-row gap-4">
-                        <Button 
-                          size="lg" 
-                          className="bg-gradient-to-r from-primary to-primary/80 text-black font-semibold hover:scale-105 transition-transform duration-300"
-                        >
-                          Contratar
-                        </Button>
-                        <Button 
-                          size="lg" 
-                          variant="outline" 
-                          className="border-white/30 text-white hover:bg-white/10 group"
-                        >
-                          Conocer Más
-                          <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
-                        </Button>
-                      </div>
+
                     </div>
                     
                     {/* Image Side - Right */}
