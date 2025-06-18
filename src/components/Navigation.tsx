@@ -24,7 +24,7 @@ const Navigation = () => {
               <img 
                 src="/lovable-uploads/VOU.png" 
                 alt="VOU Logo" 
-                className="h-8 w-auto"
+                className="h-12 w-auto"
               />
             </button>
           </div>
