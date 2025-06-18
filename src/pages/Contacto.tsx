@@ -1,10 +1,9 @@
 import Navigation from "@/components/Navigation";
 import SuperHeader from "@/components/SuperHeader";
 import FooterSection from "@/components/FooterSection";
-import { ArrowLeft, Mail, Phone, MapPin, Clock, CheckCircle, XCircle } from "lucide-react";
+import { ArrowLeft, Mail, Phone, MapPin, Clock } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import { EMAILJS_CONFIG } from "@/config/emailjs";
 
 const Contacto = () => {
   const [formData, setFormData] = useState({
@@ -16,97 +15,11 @@ const Contacto = () => {
     message: ''
   });
 
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
-
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
-    setSubmitStatus('idle');
-
-    try {
-      console.log('=== DEBUG FORMULARIO ===');
-      console.log('EmailJS disponible:', !!window.emailjs);
-      console.log('Configuración:', EMAILJS_CONFIG);
-      
-      // Verificar si EmailJS está configurado correctamente
-      const isEmailJSConfigured = 
-        window.emailjs && 
-        EMAILJS_CONFIG.serviceId !== 'YOUR_SERVICE_ID' &&
-        EMAILJS_CONFIG.templateId !== 'YOUR_TEMPLATE_ID' &&
-        EMAILJS_CONFIG.publicKey !== 'YOUR_PUBLIC_KEY';
-
-      console.log('EmailJS configurado:', isEmailJSConfigured);
-
-      if (isEmailJSConfigured) {
-        // Usar EmailJS si está configurado
-        const templateParams = {
-          from_name: formData.name,
-          from_email: formData.email,
-          company: formData.company || 'No especificada',
-          phone: formData.phone || 'No especificado',
-          service: formData.service || 'No especificado',
-          message: formData.message || 'Sin mensaje adicional',
-          to_email: 'alejandro@agenciavou.cl,catalina.amenabar@agenciavou.cl,mariajose.valdes@agenciavou.cl'
-        };
-
-        console.log('Enviando con EmailJS...', templateParams);
-        
-        const result = await window.emailjs.send(
-          EMAILJS_CONFIG.serviceId,
-          EMAILJS_CONFIG.templateId,
-          templateParams,
-          EMAILJS_CONFIG.publicKey
-        );
-        
-        console.log('Resultado EmailJS:', result);
-        setSubmitStatus('success');
-      } else {
-        // Fallback a mailto si EmailJS no está configurado
-        const emailBody = `
-Nueva solicitud de asesoría desde VOU.digital
-
-Datos del contacto:
-- Nombre: ${formData.name}
-- Email: ${formData.email}
-- Empresa: ${formData.company || 'No especificada'}
-- Teléfono: ${formData.phone || 'No especificado'}
-- Servicio de interés: ${formData.service || 'No especificado'}
-
-Mensaje:
-${formData.message || 'Sin mensaje adicional'}
-
----
-Este email fue enviado desde el formulario de contacto de VOU.digital
-        `;
-
-        const subject = encodeURIComponent(`Nueva solicitud de asesoría - ${formData.name}`);
-        const body = encodeURIComponent(emailBody);
-        const mailtoLink = `mailto:alejandro@agenciavou.cl,catalina.amenabar@agenciavou.cl,mariajose.valdes@agenciavou.cl?subject=${subject}&body=${body}`;
-        
-        window.open(mailtoLink, '_blank');
-        setSubmitStatus('success');
-      }
-      
-      // Limpiar formulario después de 3 segundos
-      setTimeout(() => {
-        setFormData({
-          name: '',
-          email: '',
-          company: '',
-          phone: '',
-          service: '',
-          message: ''
-        });
-        setSubmitStatus('idle');
-      }, 3000);
-      
-    } catch (error) {
-      console.error('Error al enviar formulario:', error);
-      setSubmitStatus('error');
-    } finally {
-      setIsSubmitting(false);
-    }
+    // Formulario básico - sin funcionalidad de envío
+    console.log('Datos del formulario:', formData);
+    alert('Formulario enviado (función básica)');
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -200,7 +113,7 @@ Este email fue enviado desde el formulario de contacto de VOU.digital
               </p>
 
               <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-6">
+                <div className="grid md:grid-cols-2 gap-4">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
                       Nombre *
@@ -209,14 +122,13 @@ Este email fue enviado desde el formulario de contacto de VOU.digital
                       type="text"
                       id="name"
                       name="name"
-                      required
                       value={formData.name}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-foreground placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
-                      placeholder="Tu nombre completo"
+                      required
+                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                      placeholder="Tu nombre"
                     />
                   </div>
-                  
                   <div>
                     <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
                       Email *
@@ -225,16 +137,16 @@ Este email fue enviado desde el formulario de contacto de VOU.digital
                       type="email"
                       id="email"
                       name="email"
-                      required
                       value={formData.email}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-foreground placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                      required
+                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
                       placeholder="tu@empresa.com"
                     />
                   </div>
                 </div>
 
-                <div className="grid md:grid-cols-2 gap-6">
+                <div className="grid md:grid-cols-2 gap-4">
                   <div>
                     <label htmlFor="company" className="block text-sm font-medium text-foreground mb-2">
                       Empresa
@@ -245,11 +157,10 @@ Este email fue enviado desde el formulario de contacto de VOU.digital
                       name="company"
                       value={formData.company}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-foreground placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
                       placeholder="Nombre de tu empresa"
                     />
                   </div>
-                  
                   <div>
                     <label htmlFor="phone" className="block text-sm font-medium text-foreground mb-2">
                       Teléfono
@@ -260,7 +171,7 @@ Este email fue enviado desde el formulario de contacto de VOU.digital
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-foreground placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
                       placeholder="+56 9 1234 5678"
                     />
                   </div>
@@ -279,7 +190,7 @@ Este email fue enviado desde el formulario de contacto de VOU.digital
                   >
                     <option value="">Selecciona un servicio</option>
                     {services.map((service, index) => (
-                      <option key={index} value={service} className="bg-gray-800">
+                      <option key={index} value={service} className="bg-background text-foreground">
                         {service}
                       </option>
                     ))}
@@ -293,75 +204,60 @@ Este email fue enviado desde el formulario de contacto de VOU.digital
                   <textarea
                     id="message"
                     name="message"
-                    rows={4}
                     value={formData.message}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-foreground placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent resize-none"
-                    placeholder="Cuéntanos sobre tu proyecto y objetivos..."
-                  />
+                    rows={5}
+                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent resize-y"
+                    placeholder="Cuéntanos sobre tu proyecto y cómo podemos ayudarte..."
+                  ></textarea>
                 </div>
 
                 <button
                   type="submit"
-                  disabled={isSubmitting}
-                  className="w-full bg-primary hover:bg-primary/90 disabled:bg-gray-600 disabled:cursor-not-allowed text-black py-4 rounded-lg font-medium transition-colors flex items-center justify-center gap-2"
+                  className="w-full px-8 py-4 bg-primary text-black font-semibold rounded-lg hover:bg-primary/90 transition-colors"
                 >
-                  {isSubmitting ? (
-                    <>
-                      <div className="animate-spin h-5 w-5 border-2 border-black border-t-transparent rounded-full"></div>
-                      Enviando...
-                    </>
-                  ) : (
-                    'Enviar Asesoría'
-                  )}
+                  Enviar Consulta
                 </button>
-
-                {/* Success/Error Messages */}
-                {submitStatus === 'success' && (
-                  <div className="flex items-center gap-2 p-4 bg-green-500/20 border border-green-500/30 rounded-lg text-green-400">
-                    <CheckCircle size={20} />
-                    <span>¡Solicitud procesada exitosamente! Te contactaremos en las próximas 24 horas.</span>
-                  </div>
-                )}
-                
-                {submitStatus === 'error' && (
-                  <div className="flex items-center gap-2 p-4 bg-red-500/20 border border-red-500/30 rounded-lg text-red-400">
-                    <XCircle size={20} />
-                    <span>Hubo un error al enviar la solicitud. Por favor, intenta nuevamente o contáctanos directamente a alejandro@agenciavou.cl</span>
-                  </div>
-                )}
               </form>
             </div>
 
             {/* Contact Information */}
             <div className="space-y-8">
               <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8">
-                <h2 className="text-2xl font-bold text-foreground mb-6">
-                  Información de contacto
-                </h2>
+                <h3 className="text-xl font-bold text-foreground mb-6">
+                  Información de Contacto
+                </h3>
                 
                 <div className="space-y-6">
                   {contactInfo.map((item, index) => (
-                    <div key={index} className="flex items-start space-x-4">
-                      <div className="flex-shrink-0 p-3 bg-primary/20 rounded-lg">
-                        {item.icon}
-                      </div>
+                    <div key={index} className="flex items-start gap-4">
+                      {item.icon}
                       <div>
-                        <h3 className="font-semibold text-foreground mb-2">{item.title}</h3>
+                        <h4 className="font-semibold text-foreground mb-2">
+                          {item.title}
+                        </h4>
                         {item.details ? (
                           <div className="space-y-3">
-                            {item.details.map((detail, detailIndex) => (
-                              <div key={detailIndex}>
-                                <p className="font-medium text-primary">{detail.location}</p>
-                                <p className="text-sm text-muted-foreground">{detail.address}</p>
+                            {item.details.map((detail, idx) => (
+                              <div key={idx}>
+                                <p className="font-medium text-primary text-sm">
+                                  {detail.location}
+                                </p>
+                                <p className="text-muted-foreground text-sm">
+                                  {detail.address}
+                                </p>
                                 {detail.code && (
-                                  <p className="text-sm text-muted-foreground">{detail.code}</p>
+                                  <p className="text-muted-foreground text-sm">
+                                    {detail.code}
+                                  </p>
                                 )}
                               </div>
                             ))}
                           </div>
                         ) : (
-                          <p className="text-muted-foreground">{item.info}</p>
+                          <p className="text-muted-foreground">
+                            {item.info}
+                          </p>
                         )}
                       </div>
                     </div>
@@ -369,26 +265,58 @@ Este email fue enviado desde el formulario de contacto de VOU.digital
                 </div>
               </div>
 
-              {/* Partners */}
+              {/* Contact Methods */}
               <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8">
                 <h3 className="text-xl font-bold text-foreground mb-6">
-                  Nuestros partners
+                  Contacto Directo
                 </h3>
-                <div className="grid grid-cols-3 gap-4">
-                  {['Meta', 'Google', 'HubSpot'].map((partner, index) => (
-                    <div 
-                      key={index}
-                      className="flex items-center justify-center p-4 bg-white/10 rounded-lg"
-                    >
-                      <span className="text-primary font-medium text-sm">{partner}</span>
-                    </div>
-                  ))}
+                <div className="space-y-4">
+                  <a 
+                    href="mailto:alejandro@agenciavou.cl"
+                    className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    <Mail size={20} />
+                    <span>alejandro@agenciavou.cl</span>
+                  </a>
+                  <a 
+                    href="tel:+56212345678"
+                    className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    <Phone size={20} />
+                    <span>+56 2 1234 5678</span>
+                  </a>
                 </div>
+              </div>
+
+              {/* Map or additional info could go here */}
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8">
+                <h3 className="text-xl font-bold text-foreground mb-6">
+                  ¿Por qué elegir VOU?
+                </h3>
+                <ul className="space-y-3 text-muted-foreground">
+                  <li className="flex items-center gap-3">
+                    <div className="w-2 h-2 bg-primary rounded-full"></div>
+                    <span>Especialistas en Performance Digital + IA</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <div className="w-2 h-2 bg-primary rounded-full"></div>
+                    <span>Consultoría personalizada y estratégica</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <div className="w-2 h-2 bg-primary rounded-full"></div>
+                    <span>Resultados medibles y escalables</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <div className="w-2 h-2 bg-primary rounded-full"></div>
+                    <span>Respuesta en menos de 24 horas</span>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
         </div>
       </section>
+
       <FooterSection />
     </div>
   );
