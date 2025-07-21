@@ -59,12 +59,12 @@ const FooterSection = () => {
                   </p>
                 </div>
               </div>
-              <a 
-                href="/contacto" 
+              <Link 
+                to="/contacto" 
                 className="inline-flex items-center gap-2 mt-6 text-primary hover:text-primary/80 transition-colors text-sm"
               >
                 <span>✉</span> Hablemos
-              </a>
+              </Link>
             </div>
 
             {/* Partner Logos */}
