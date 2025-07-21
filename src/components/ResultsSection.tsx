@@ -1,22 +1,7 @@
 import { TrendingUp, Target, Users, Zap, ArrowRight } from "lucide-react";
-import { useNavigate, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const ResultsSection = () => {
-  const navigate = useNavigate();
-  const location = useLocation();
-
-  const handleVerMasCasos = () => {
-    if (location.pathname === '/resultados') {
-      // Si ya estamos en la página de resultados, hacer scroll al header
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-    } else {
-      // Si estamos en otra página, navegar a resultados
-      navigate('/resultados');
-    }
-  };
   
   const metrics = [
     {
@@ -45,13 +30,9 @@ const ResultsSection = () => {
     }
   ];
 
-  // SECCIÓN COMENTADA TEMPORALMENTE - Resultados con porcentajes
-  return null;
-  
-  /* 
   return (
     <section id="resultados" className="py-20 pb-8 bg-black relative overflow-hidden">
-      {/* Animated background *//*}
+      {/* Animated background */}
       <div className="absolute inset-0">
         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-primary/5 to-transparent" />
       </div>
@@ -83,10 +64,10 @@ const ResultsSection = () => {
           ))}
         </div>
 
-        {/* Ver más button *//*}
+        {/* Ver más button */}
         <div className="text-center mb-32" data-aos="fade-up">
-          <button 
-            onClick={() => navigate('/resultados')}
+          <Link 
+            to="/resultados"
             className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-primary to-primary/80 text-black font-medium rounded-full hover:scale-105 transition-transform duration-300 group"
           >
             <span>Ver más casos de estudio</span>
@@ -94,12 +75,11 @@ const ResultsSection = () => {
               size={20} 
               className="transform group-hover:translate-x-1 transition-transform"
             />
-          </button>
+          </Link>
         </div>
       </div>
     </section>
   );
-  */
 };
 
 export default ResultsSection;

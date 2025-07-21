@@ -1,22 +1,7 @@
 import { ArrowRight } from "lucide-react";
-import { useNavigate, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const PerformanceCarousel = () => {
-  const navigate = useNavigate();
-  const location = useLocation();
-
-  const handleVerTodosCasos = () => {
-    if (location.pathname === '/resultados') {
-      // Si ya estamos en la página de resultados, hacer scroll al header
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-    } else {
-      // Si estamos en otra página, navegar a resultados
-      navigate('/resultados');
-    }
-  };
 
   // SECCIÓN COMENTADA TEMPORALMENTE - Casos de estudio Repuestodo
   return null;
