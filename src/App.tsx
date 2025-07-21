@@ -13,6 +13,7 @@ import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
+// Force Vercel rebuild - URL fix v2.0
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
