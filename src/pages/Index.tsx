@@ -10,8 +10,14 @@ import ToolsSection from "@/components/ToolsSection";
 import ServicesGridSection from "@/components/ServicesGridSection";
 import CTASection from "@/components/CTASection";
 import FinalCTASection from "@/components/FinalCTASection";
+import { useEffect } from "react";
 
 const Index = () => {
+  
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className="min-h-screen bg-background relative overflow-x-hidden">
       {/* SuperHeader - above navigation */}
